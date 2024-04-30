@@ -29,9 +29,37 @@ public class Person {
      */
 
     // Membuat Constructor
-    Person(String paramName, String paramAddress){
-        name = paramName;
-        address = paramAddress;
+    Person(String name, String address){
+        /**
+         * Variable Shadowing
+         * - Variable shadowing adalah kejadian ketika kita membuat nama variable dengan nama yang
+         *   sama di scope yang menutupi variable dengan nama yang sama di scope di atasnya
+         * - Ini biasa terjadi seperti kita membuat nama parameter di method sama dengan nama field di
+         *   class
+         * - Saat terjadi variable shadowing, maka secara otomatis variable di scope diatasnya tidak bisa
+         *   diakses
+         */
+
+        // Variable Shadowing
+        // Property name dan address mengacu kepada method parameter name constructor name
+        // name = name; // Output : null
+        // address = address; // Output : null
+
+        /**
+         * This Keywoard
+         * - Saat kita membuat kode di dalam constructor atau method di dalam class, kita bisa menggunakan
+         *   kata kunci this untuk mengakses object saat ini
+         * - Misal kadang kita butuh mengakses sebuah field yang namanya sama dengan parameter method,
+         *   hal ini tidak bisa dilakukan jika langsung menyebut nama field, kita bisa mengakses nama field tsb
+         *   dengan kata kunci this (contoh : this.name)
+         * - This juga tidak hanya digunakan untuk mengakses field milik object saat ini, namun juga bisa digunakan
+         *   untuk mengakses method
+         * - This bisa digunakan untuk mengatasi masalah variable shadowing
+         */
+
+        // This Keywoard
+         this.name = name; // Output : Adrian Bimo Hernawan Pratama
+         this.address = address; // Output : Bandung
     }
 
     /**
@@ -43,18 +71,28 @@ public class Person {
 
     // Constructor Overloading
     Person(String paramName){
-        name = paramName;
+        /**
+         * Memanggil Constructor Lain
+         * - Constructor bisa memanggil constructor lain
+         * - Hal ini memudahkan saat kita butuh menginisialisasi data dengan berbagai kemungkinan
+         * - Cara untuk memanggil constructor lain, kita hanya perlu memanggilnya seperti memanggil
+         *   method, namun dengan kata kunci this
+         */
+        // Memanggil Constructor Lain
+        this(paramName, null);
     }
 
     Person(){
+        this(null);
     }
 
     // void tidak mengembalikan data apapun
-    void sayHello(String paramName) {
+    void sayHello(String name) {
         // Mengeluarkan pesan salam dengan memasukkan nama dari parameter dan nama dari object ini
         // System.out.println("Hello " + paramName + ", My Name is " + name);
+
         // Menggunakan String Template (Java 15+)
-        System.out.println(STR."Hello \{paramName}, My Name is \{name}");
+        System.out.println(STR."Hello \{name}, My Name is \{this.name}");
     }
 }
 

@@ -47,5 +47,10 @@ public class PersonApp {
         person2 = new Person("Adrian", "Bandung Timur");
         person2.sayHello("Dilla"); // Output : Hello Dilla, My Name is Adrian
 
+        Person person3;
+        person3 = new Person(); // Ketika mengosongkan parameter Person() maka nilainya akan null
+        person3.sayHello("Dilla"); // Hello Dilla, My Name is null
+
+        person.sayHello(""); // Hello , My Name is Adrian Bimo Hernawan Pratama
     }
 }
