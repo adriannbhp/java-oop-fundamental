@@ -10,12 +10,13 @@ public class Person {
      * - Fields /Properties /Attributes adalah data yang bisa kita sisipkan di dalam Object
      * - Namun sebelum kita bisa memasukkan data di fields, kita harus mendeklarasikan
      *   data apa saja yang dimiliki object tersebut di dalam deklarasi class-nya
-     * - Membuat field sama seperti membuat variable, namun ditemaptkan di block class
+     * - Membuat field sama seperti membuat variable, namun ditempatkan di block class
      */
 
+    // Membuat Field
     String name;
     String address;
-    final String country = "Indonesia";
+    final String country = "Indonesia"; // keyword final tidak dapat diubah mirip seperti const
 
     /**
      * Constructor
@@ -41,9 +42,9 @@ public class Person {
          */
 
         // Variable Shadowing
-        // Property name dan address mengacu kepada method parameter name constructor name
-        // name = name; // Output : null
-        // address = address; // Output : null
+        // Property name dan address mengacu kepada method parameter sehingga outputnya null
+         name = name; // Output : null
+         address = address; // Output : null
 
         /**
          * This Keywoard
@@ -70,6 +71,8 @@ public class Person {
      */
 
     // Constructor Overloading
+
+    // Constructor dengan parameter
     Person(String paramName){
         /**
          * Memanggil Constructor Lain
@@ -82,6 +85,7 @@ public class Person {
         this(paramName, null);
     }
 
+    // Constructor tanpa parameter
     Person(){
         this(null);
     }

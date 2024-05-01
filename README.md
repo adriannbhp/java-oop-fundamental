@@ -17,3 +17,13 @@
 > - Class berisikan deklarasi semua properties dan functions yang dimiliki oleh Object
 > - Setiap Object selalu dibuat dari Class
 > - Dan sebuah Class bisa membuat Object tanpa batas
+
+## Contoh
+
+![Logo GitHub](img/class&object.png)
+> Source Programmer Zaman Now
+
+#### Penjelasan :
+> - Class : Person 
+> > - Attribute : String firstName dan String lastName
+> > - Method : sayHello dengan parameter
